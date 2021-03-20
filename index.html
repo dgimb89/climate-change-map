@@ -9,6 +9,13 @@
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+.controls {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
 </style>
 </head>
 <body>
@@ -23,5 +30,14 @@ body { margin: 0; padding: 0; }
     });
 </script>
 
+<div class="controls">
+    <input type="checkbox" name="coalplants" id="coalplants">
+    <label for="coalplants">Kohlekraftwerke stillegen</label>
+
+    <input type="range" name="year" id="year" min="2020" max="2100" value="2020">
+    <label for="year" id="yearlabel">Jahr</label>
+</div>
+
+<script src="controls.js"></script>
 </body>
 </html>
