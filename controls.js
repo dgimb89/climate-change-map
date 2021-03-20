@@ -7,10 +7,13 @@ const sliderLabel = document.getElementById('yearlabel');
 coalplants.oninput = function() {
     updatePolygons();
 }
-sliderLabel.innerHTML = slider.value;
+updateSlider();
 slider.oninput = function() {
-    sliderLabel.innerHTML = slider.value;
+    updateSlider();
     updatePolygons();
+}
+function updateSlider() {
+    sliderLabel.innerHTML = 'Jahr ' + slider.value;
 }
 
 function updatePolygons() {
