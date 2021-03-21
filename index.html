@@ -12,14 +12,49 @@
     .controls {
         position: absolute;
         z-index: 100;
-        top: 0;
-        left: 0;
-        background-color: white;
+        top: 60px;
+        left: 8px;
+        padding: 12px;
+        border-radius: 8px;
+
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .timeline {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        top: 8px;
+    }
+
+    #timeline {
+        width: 95%;
+        position: relative;
+        display: block;
+        margin : 0 auto;
+    }
+
+    #timeline .slider-selection {
+        background: #428041;
+    }
+    #timeline .slider-handle {
+        background: green;
+    }
+    #timeline .slider-tick.in-selection {
+        background: darkgreen;
     }
     </style>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+
     <!-- Bootstrap Theme Minty -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+
+    <!-- Bootstrap Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -37,14 +72,13 @@
     <div class="controls">
         <input type="checkbox" name="coalplants" id="coalplants">
         <label for="coalplants">Kohlekraftwerke stillegen</label>
+    </div>
 
-        <input type="range" name="year" id="year" min="2020" max="2100" value="2020">
-        <label for="year" id="yearlabel">Jahr</label>
+    <div class="timeline">
+        <input type="text" data-slider-tooltip="hide" data-slider-ticks="[2020, 2030, 2040, 2050]" value="2020" data-slider-min="2020" data-slider-max="2050" data-slider-step="10" data-slider-value="2020" data-slider-id="timeline" id="timeline" data-slider-handle="round" data-slider-ticks-labels='["2020", "2030", "2040", "2050"]' />
     </div>
 
     <script src="controls.js"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
 </body>
 </html>

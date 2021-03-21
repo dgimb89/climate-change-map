@@ -1,23 +1,16 @@
 const SEA_COLOR = '#0b1423';
 
 const coalplants = document.getElementById('coalplants');
-const slider = document.getElementById('year');
-const sliderLabel = document.getElementById('yearlabel');
+
+var yearSlider = $('#timeline').slider().on('slide', updatePolygons).data('slider');
 
 coalplants.oninput = function() {
     updatePolygons();
 }
-updateSlider();
-slider.oninput = function() {
-    updateSlider();
-    updatePolygons();
-}
-function updateSlider() {
-    sliderLabel.innerHTML = 'Jahr ' + slider.value;
-}
 
 function updatePolygons() {
-    const newOpacity = (parseInt(slider.value) - 2020)/80 * (coalplants.checked ? 0 : 1);
+    const year = yearSlider.getValue();
+    const newOpacity = (parseInt(year) - 2020)/30 * (coalplants.checked ? 0 : 1);
     map.setPaintProperty('sealevel', 'fill-opacity', newOpacity);
     map.setPaintProperty('poles', 'fill-opacity', newOpacity);
 }
