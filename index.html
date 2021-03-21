@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Display a satellite map on a webpage</title>
+    <title>Climate Change Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
     <style>
-    body { margin: 0; padding: 0; }
+    body { margin: 0; padding: 0; overflow: hidden; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
     .controls {
         position: absolute;
@@ -24,14 +24,16 @@
         position: absolute;
         width: 100%;
         z-index: 100;
-        top: 8px;
+        top: 10px;
+    }
+
+    .timeline > div {
+        width: 95%;
+        margin: 0 auto;
     }
 
     #timeline {
-        width: 95%;
-        position: relative;
-        display: block;
-        margin : 0 auto;
+        width: 100%;
     }
 
     #timeline .slider-selection {
@@ -75,7 +77,9 @@
     </div>
 
     <div class="timeline">
-        <input type="text" data-slider-tooltip="hide" data-slider-ticks="[2020, 2030, 2040, 2050]" value="2020" data-slider-min="2020" data-slider-max="2050" data-slider-step="10" data-slider-value="2020" data-slider-id="timeline" id="timeline" data-slider-handle="round" data-slider-ticks-labels='["2020", "2030", "2040", "2050"]' />
+        <div>
+            <input type="text" data-slider-tooltip="hide" data-slider-ticks="[2020, 2030, 2040, 2050]" value="2020" data-slider-min="2020" data-slider-max="2050" data-slider-step="10" data-slider-value="2020" data-slider-id="timeline" id="timeline" data-slider-handle="round" data-slider-ticks-labels='["2020", "2030", "2040", "2050"]' />
+        </div>
     </div>
 
     <script src="controls.js"></script>

@@ -2,7 +2,7 @@ const SEA_COLOR = '#0b1423';
 
 const coalplants = document.getElementById('coalplants');
 
-var yearSlider = $('#timeline').slider().on('slide', updatePolygons).data('slider');
+var yearSlider = $('#timeline').slider().on('change', updatePolygons).data('slider');
 
 coalplants.oninput = function() {
     updatePolygons();
