@@ -1,4 +1,4 @@
-const SEA_COLOR = '#0b1423';
+const SEA_COLOR = '#001234';
 
 const coalplants = document.getElementById('coalplants');
 
@@ -35,7 +35,17 @@ function addGeoJsonToMap(id, geojson) {
         'fill-color': SEA_COLOR,
         'fill-opacity': 0
         }
-    })
+    }, findLabelLayer())
+}
+
+function findLabelLayer() {
+    const layers = map.getStyle().layers;
+    for (let i = 0; i < layers.length; i++) {
+        if (layers[i].type === 'symbol') {
+            return layers[i].id;
+        }
+    }
+    return undefined;
 }
 
 map.on('load', function () {
