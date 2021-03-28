@@ -1,20 +1,9 @@
 SEALEVEL=$1 # e.g. 2
-INPUT_DIR=$2
-OUTPUT_DIR=$3
+OUTPUT_DIR=$2
 
-g.region n=90 s=0 w=0 e=30 nsres=0.0025 ewres=0.0025
-#g.region n=90 s=-90 w=-180 e=180 nsres=0.0025 ewres=0.0025
+#g.region n=90 s=0 w=0 e=30 nsres=0.0025 ewres=0.0025
+g.region n=90 s=-90 w=-180 e=180 nsres=0.0025 ewres=0.0025
 
-echo "Importing..."
-MAPS=""
-for tile in ${INPUT_DIR}cut*.asc ; do
-  outname=elev_`basename $tile .asc`
-  MAPS=${outname},${MAPS}
-  r.external input=$tile output=$outname -o
-done
-echo "Mosaicing..."
-r.patch --overwrite input=$MAPS output=elev_mosaic
-echo "Done."
 echo "Flooding..."
 r.buffer --overwrite input=elev_mosaic@PERMANENT output=elev_buffer distances=0.2
 r.mapcalc --overwrite expression="flooding = ( elev_mosaic@PERMANENT <= ${SEALEVEL} ||| elev_buffer@PERMANENT == 2 ) ? 1 : null()"
