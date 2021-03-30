@@ -1,8 +1,8 @@
 SEALEVEL=$1 # e.g. 2
 OUTPUT_DIR=$2
 
-#g.region n=90 s=0 w=0 e=30 nsres=0.0025 ewres=0.0025
-g.region n=90 s=-90 w=-180 e=180 nsres=0.0025 ewres=0.0025
+#g.region n=60 s=0 w=0 e=30 nsres=0.0025 ewres=0.0025
+g.region n=60 s=-60 w=-180 e=180 nsres=0.005 ewres=0.005
 
 echo "Flooding..."
 r.buffer --overwrite input=elev_mosaic@PERMANENT output=elev_buffer distances=0.2
@@ -17,3 +17,6 @@ v.generalize --overwrite input=flooding_gen0@PERMANENT type=area output=flooding
 echo "Exporting..."
 v.out.ogr -s --overwrite input=flooding_gen1@PERMANENT output=${OUTPUT_DIR}/sealevel_${SEALEVEL}.geojson format=GeoJSON lco=COORDINATE_PRECISION=3
 echo "Done."
+
+#r.mapcalc expression="elev_zeroed = isnull(elev_mosaic@PERMANENT) ? 0 :  elev_mosaic@PERMANENT" --overwrite
+#r.lake --overwrite elevation=elev_mosaic@PERMANENT water_level=2 lake=lake coordinates=17.6,34.6
