@@ -49,6 +49,6 @@ function findLabelLayer() {
 }
 
 map.on('load', function () {
-    loadFile("sealevel", "data/sealevel/sealevel.geojson");
+    loadFile("sealevel", "data/sealevel/sealevel_1.geojson");
     loadFile("poles", "data/sealevel/poles.geojson");
 });
