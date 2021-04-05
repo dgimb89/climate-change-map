@@ -4,6 +4,7 @@ OUTPUT_DIR=$2
 #g.region n=60 s=0 w=0 e=30 nsres=0.0025 ewres=0.0025
 g.region n=60 s=-60 w=-180 e=180 nsres=0.005 ewres=0.005
 
+echo "SLR: ${SEALEVEL}"
 echo "Flooding..."
 r.mapcalc --overwrite expression="flooding = ( elev_mosaic@PERMANENT <= ${SEALEVEL} &&& !isnull(lake@PERMANENT) ||| elev_buffer@PERMANENT == 2 ) ? 1 : null()"
 echo "Vectorizing..."
@@ -16,3 +17,5 @@ v.generalize --overwrite input=flooding_gen0@PERMANENT type=area output=flooding
 echo "Exporting..."
 v.out.ogr -s --overwrite input=flooding_gen1@PERMANENT output=${OUTPUT_DIR}/sealevel_${SEALEVEL}.geojson format=GeoJSON lco=COORDINATE_PRECISION=3
 echo "Done."
+
+# tippecanoe -zg -o sealevel.mbtiles --drop-densest-as-needed ./sealevel_{-100,1,2}.geojson
