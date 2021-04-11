@@ -1,2 +1,0 @@
-Sea level rising data is calculated based on elevation data provided by: Jarvis A., H.I. Reuter, A. Nelson, E. Guevara, 2008, Hole-filled seamless SRTM data V4, International Centre for Tropical Agriculture (CIAT), available from
-https://srtm.csi.cgiar.org.
