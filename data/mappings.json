@@ -59,6 +59,36 @@
             }
         ]
     },
+    "tcs": {
+        "label": "Mapping of global mean temperature rise to occurrence of tropical cyclons.",
+        "mapping": [
+            {
+                "label": "RCP8.5",
+                "x": 3.6,
+                "y": 0
+            },
+            {
+                "label": "RCP6.0",
+                "x": 2.0,
+                "y": 1
+            },
+            {
+                "label": "RCP4.5",
+                "x": 1.7,
+                "y": 2
+            },
+            {
+                "label": "RCP2.6",
+                "x": 0.9,
+                "y": 3
+            },
+            {
+                "label": "2000 levels",
+                "x": 0,
+                "y": 3
+            }
+        ]
+    },
     "parameters": {
         "label": "Mapping of policies and behavioral changes to CO2 emissions.",
         "mapping": [

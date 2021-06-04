@@ -41,6 +41,30 @@ Cf.
     Bamber, Jonathan L., et al. "Ice sheet contributions to future sea-level rise from structured expert judgment." Proceedings of the National Academy of Sciences 116.23 (2019): 11195-11200.
 
 
+TEMPERATURE - OCCURENCE OF TROPICAL CYCLONES MAPPING
+
+Mapping of
+    x: global mean temperature rise relative to 1986-2005 mean in K.
+    y: An identifier for a scenario of tropical cyclone (TC) occurences, which is generated separately.
+
+    The projections of future TC behavior are very uncertain. Most studies suggest that maximum wind speeds will increase (by about 5%) and the proportion of category 4-5 (with wind speeds of more than about 200km/h) TCs will increase (by about 13%) [1]. 
+    The decay of landfalling TCs is already slowing down, proportionally to the increase in sea surface temperatures [2]. However, the absolute number of TCs seems to decrease [1, 3].
+
+    The basis of this visualization is historic data taken from [4] (starting from 1980), containing the georeferenced tracks, the wind speeds, and landfall data. From this collection of about 4000 TCs, 50 are sampled for each RCP scenario using conditional probabilities. So far, only the roughly interpolated category 4-5 likelihood is taken into account. Other criteria (e.g. landfall decay) would require even more unfounded assumptions. The decreased frequency is not represented in the visualization. The changes in intensity are so far barely noticeable in the visualization. The apparent size of the TCs in the visualization is only dependent on the wind speeds of the corresponding historic TC.
+    
+Cf. 
+    [1] Knutson, Thomas, et al. "Tropical cyclones and climate change assessment: Part II: Projected response to anthropogenic warming." Bulletin of the American Meteorological Society 101.3 (2020): E303-E322.
+    https://doi.org/10.1175/BAMS-D-18-0194.1
+    
+    [2] Li, Lin, and Pinaki Chakraborty. "Slower decay of landfalling hurricanes in a warming world." Nature 587.7833 (2020): 230-234.
+    https://ui.adsabs.harvard.edu/link_gateway/2020Natur.587..230L/doi:10.1038/s41586-020-2867-7
+
+    [3] Stansfield, Alyssa M., Kevin A. Reed, and Colin M. Zarzycki. "Changes in Precipitation From North Atlantic Tropical Cyclones Under RCP Scenarios in the Variable‐Resolution Community Atmosphere Model." Geophysical Research Letters 47.12 (2020): e2019GL086930.
+    https://doi.org/10.1029/2019GL086930
+
+    [4] Knapp, Kenneth R., et al. "The international best track archive for climate stewardship (IBTrACS) unifying tropical cyclone data." Bulletin of the American Meteorological Society 91.3 (2010): 363-376.
+    https://www.ncdc.noaa.gov/ibtracs/index.php?name=ib-v4-access
+
 
 PARAMETERS - CO2 EMISSION MAPPING
 

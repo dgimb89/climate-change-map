@@ -35,9 +35,12 @@ function updatePolygons() {
     console.log('Temperature forecast for 2100:', temperature);
     const sealevel = interpolate(mappings.sealevel.mapping, temperature);  
     console.log('Sealevel forecast for 2100:', sealevel);
+    const tcs = Math.round(interpolate(mappings.tcs.mapping, temperature))
+    console.log('Tropical cyclones scenario for 2100:', tcs);
 
     updateTemperature(temperature);
     updateSealevel(sealevel);
+    updateTcs(tcs);
 }
 
 function cumulateCo2Emissions() {
@@ -154,4 +157,6 @@ map.on('load', function () {
     //loadFile("sealevel_-100", "data/sealevel/sealevel_-15.geojson");
     //loadFile("sealevel_1", "data/sealevel/sealevel_1.geojson");
     //loadFile("sealevel_2", "data/sealevel/sealevel_2.geojson");
+
+    initializeTcs();
 });
